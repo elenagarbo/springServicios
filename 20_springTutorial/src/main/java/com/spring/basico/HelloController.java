@@ -26,7 +26,7 @@ public class HelloController {
         String now = (new Date()).toString();
         logger.info("Returning hello view with " + now);
 //nos con comillas el parametro k pasas luego en el jsp con ${}
-        return new ModelAndView("WEB-INF/views/hello.jsp", "now", now);
+        return new ModelAndView("hello", "now", now);
 
     }
 	    
@@ -38,7 +38,7 @@ public class HelloController {
 	        
 	        String nombre= "Juan";
 
-	        return new ModelAndView("WEB-INF/views/servicios.jsp", "minombre", nombre);
+	        return new ModelAndView("servicios", "minombre", nombre);
 	    }
 
 }
