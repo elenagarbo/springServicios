@@ -2,6 +2,8 @@ package com.spring.basico;
 
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,27 +14,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
 public class HelloController {
-	 protected final Log logger = LogFactory.getLog(getClass());
 
-	    @RequestMapping(value="/hello.htm")
-	    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
+    protected final Log logger = LogFactory.getLog(getClass());
 
-	        logger.info("Returning hello view");
+    @RequestMapping(value="/hello.htm")
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	        return new ModelAndView("hello.jsp");
-	    }
+        String now = (new Date()).toString();
+        logger.info("Returning hello view with " + now);
+//nos con comillas el parametro k pasas luego en el jsp con ${}
+        return new ModelAndView("WEB-INF/views/hello.jsp", "now", now);
+
+    }
 	    
 	    @RequestMapping(value="/servicios.htm")
 	    public ModelAndView llamarServicios(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 
 	        logger.info("Returning hello view");
+	        
+	        String nombre= "Juan";
 
-	        return new ModelAndView("servicios.jsp");
+	        return new ModelAndView("WEB-INF/views/servicios.jsp", "minombre", nombre);
 	    }
 
 }

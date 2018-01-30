@@ -1,3 +1,4 @@
+<%@ include file="/WEB-INF/views/include.jsp" %>
 <html>
   <head>
   <title>Example :: Spring Application</title>
@@ -14,6 +15,10 @@
   
    <div align="center"> <h1>Ejemplo de una Aplicacion de Spring</h1>
    <p>Pincha para ir a los diferentes JSP.</p>
+   
+   <%-- Redirected because we can't set the welcome page to a virtual URL. --%>
+	 <%--<c:redirect url="/hello.htm"/>--%>
+	
    </div>
    
    <div align="center">
