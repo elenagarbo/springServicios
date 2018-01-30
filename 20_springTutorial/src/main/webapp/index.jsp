@@ -24,7 +24,7 @@
    <div align="center">
    
  
-    <a href="hello.htm" target="_blank"> <button type="button" class="btn btn-outline-success">JSP Hello</button></a>
+    <a href="hello.htm"> <button type="button" class="btn btn-outline-success">JSP Hello</button></a>
     
      <a href="servicios.htm"><button type="button" class="btn btn-outline-dark">JSP Servicios</button></a>
    
